@@ -4,7 +4,7 @@ project
 
 lib lua
     : [ glob src/*.c : src/lua.c src/luac.c ]
-    : <link>static
+    : <link>static <cflags>-fPIC
     ;
 
 exe tools/luac
