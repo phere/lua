@@ -1,0 +1,18 @@
+project
+	: usage-requirements <include>src
+	;
+
+lib lua
+    : [ glob src/*.c : src/lua.c src/luac.c ]
+    : <link>static
+    ;
+
+exe tools/luac
+    : src/luac.c
+    : <library>lua
+    ;
+
+exe tools/lua.bin
+    : src/lua.c
+    : <library>lua
+    ;
